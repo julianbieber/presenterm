@@ -312,11 +312,12 @@ pub struct MermaidConfig {
     /// The scaling parameter to be used in the mermaid CLI.
     #[serde(default = "default_mermaid_scale")]
     pub scale: u32,
+    pub puppeteer_config_file: Option<String>,
 }
 
 impl Default for MermaidConfig {
     fn default() -> Self {
-        Self { scale: default_mermaid_scale() }
+        Self { scale: default_mermaid_scale(), puppeteer_config_file: None }
     }
 }
 

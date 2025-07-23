@@ -33,6 +33,7 @@ pub struct ThirdPartyConfigs {
     pub mermaid_scale: String,
     pub d2_scale: String,
     pub threads: usize,
+    pub mermaid_puppeteer_config: Option<String>,
 }
 
 pub struct ThirdPartyRender {
@@ -69,6 +70,7 @@ impl Default for ThirdPartyRender {
             mermaid_scale: default_mermaid_scale().to_string(),
             d2_scale: "-1".to_string(),
             threads: default_snippet_render_threads(),
+            mermaid_puppeteer_config: None,
         };
         Self::new(config, Default::default(), Path::new("."))
     }
